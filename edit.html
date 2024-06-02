@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% from 'macros.html' import render_input %}
+
+{% block  content %}
+    <div class="container">
+        <h1 class="mt-5">Edit post</h1>
+        <form action="/edit/{{ post.id }}" method="post" class="mt-3">
+            <div class="mb-3">
+                <input class="form-control" id="Title" type="text" name="title" value="{{ post.title }}" required>
+                <input class="form-control" id="Content" type="text" name="content" value="{{ post.content }}" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Edit</button>
+        </form>
+    </div>
+{% endblock %}
